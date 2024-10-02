@@ -317,16 +317,16 @@
         <div id="results-carousel" class="carousel results-carousel">
           <div class="box m-5">
             <div class="content has-text-centered">
-              <img src="static/images/figure1.png" alt="geometric reasoning" width="84%"/>
-              <p>The upper part illustrates an example of diversity bias in LLM-as-a-Judge scenarios, while the lower part displays the ranking of average consistency metrics across six models.</b>
+              <img src="static/images/autobench-v.png" alt="geometric reasoning" width="84%"/>
+              <p>A Comprehensive Overview of the <b>AutoBench-V </b>Framework
               </p>
             </div>
           </div>
              <div class="box m-5">
             <div class="content has-text-centered">
-              <img src="static/images/calm-framework.png" alt="geometric reasoning" width="84%"/>
+              <img src="static/images/pie.png" alt="geometric reasoning" width="84%"/>
               <p>
-                Our proposed framework: <strong>CALM</strong>
+                Five key evaluation dimensions  supported by <b>AutoBench-V</b>, along with their fine-grained sub-aspects, accompanied by questions and images  to assist in understanding. 
             </p>
             </div>
           </div>
@@ -348,22 +348,30 @@
           <div class="column is-four-fifths">
             <h2 class="title is-3">Introduction</h2>
             <div class="content has-text-justified">
-                <p>Large Language Models (LLMs) such as GPT-4 and Claude-3.5 have demonstrated their exceptional capabilities in various NLP tasks, including medical domain, education, LLM-based agents, and science. Recently, research has attempted to use LLMs to automatically evaluate responses and provide rewards, also known as LLM-as-a-Judge, typically in score-wise and pairwise settings, achieving remarkable accomplishments.</p>
-    
-                <p>However, despite the wide use of LLM-as-a-Judge, some studies have pointed out its vulnerability due to its inherent biases, doubting trustworthiness beyond the evaluation process and their adherence to trustworthy principles. Extensive experiments have been conducted to explore positional preference and other biases in LLM-as-a-Judge scenarios, showing that introduced biases could affect the fairness of LLMs significantly. Variations in model judgments highlight the presence of inconsistencies when certain biases are introduced.</p>
-    
-                <p>Although the previous studies have identified some biases in LLM-as-a-Judge, there is still potential for further investigation. Existing studies often lack comprehensive frameworks for assessing the various bias dimensions affecting LLM-as-a-Judge, relying too heavily on subjective human assessment, which incurs significant costs and introduces variability. Additionally, limited test data sizes and categories can lead to results that are not representative of actual bias levels.</p>
-    
-                <p>To address these issues, we propose <strong>CALM</strong>, a comprehensive and reliable framework for profiling biases in LLM-as-a-Judge scenarios. It encompasses 12 types of biases and includes datasets across three categories. <strong>CALM</strong> offers multiple metrics to quantify and systematically compare the magnitudes of different biases without relying on subjective human assessment. Our experiments involving six models reveal varying levels of resilience to biases, providing a basis for more consistent and rigorous future investigations in the realm of LLM-as-a-Judge.</p>
-            </div>
+            <p>
+                The flourishing of Large Language Models (LLMs) has paved the way for significant advancements in the field of natural language processing (NLP). As the capabilities of LLMs grew, researchers began to explore the integration of visual information understanding capabilities into LLMs, giving rise to the development of Large Vision-Language models (LVLMs). These models are trained on extensive paired image-text datasets, enabling them to perform sophisticated multimodal reasoning by effectively integrating visual and textual information.
+            </p>
+            
+            <p>
+                With the widespread adoption of LVLMs, evaluating these models has become increasingly important for understanding their limitations and reliability better. Recent research emphasizes the urgent need for comprehensive and sophisticated evaluation standards that accurately assess LVLMs' abilities across various modalities. Various benchmarks aim to evaluate a range of capabilities of LVLMs including 3D understanding, perception and cognition capacity, and multi-discipline understanding and reasoning. Even though these works have solidly evaluated certain aspects of LVLMs' capabilities, they lack the flexibility to support on-demand evaluation across various capability aspects. Recent studies have explored the usage of generative AI in automating evaluation, which offers flexibility in varying evaluation dimensions and reduces the human cost of benchmark dataset construction. While these studies focus on the automatic evaluation of LLMs, we aim to extend this to visual modality.
+            </p>
+            
+            <p>
+                Automating the evaluation of LVLMs presents several key challenges. First, the targeted capabilities to be evaluated must be clearly identified based on the input demand. This is the foundation that relevant images and appropriate visual question-answering (VQA) tasks can be generated to accurately assess the LVLMs' performance in those specific aspects. Second, the generated images and VQA tasks should be relevant and accurately reflect the evaluation target. Third, the risk of answer leakage from the Examiner LVLM during question generation should be mitigated.
+            </p>
+            
+            <p>
+                To address the above challenges, we propose AutoBench-V, which supports automated evaluation of LVLMs based on a user demand regarding specific aspects of model capability (e.g., Spatial Understanding). Initially, the input demand is processed by an examiner LVLM, which categorizes it into several overarching aspects. Each aspect is further divided into several fine-grained components, for which image descriptions of varying difficulty levels are generated. To ensure that the descriptions align with their corresponding images, a self-validation mechanism is applied using VQA. Furthermore, an error control mechanism is implemented to prevent a negative impact on the generation of questions and reference answers. The generated questions and images are then presented to the evaluated LVLM to generate responses, which are assessed against reference answers.
+            </p>       
+          </div>
     
             <div>
                 <h2 class="title is-3">Contributions</h2>
                 <div class="content has-text-justified">
                     <ul>
-                        <li><strong>Systematic Definition of Bias in LLM-as-a-Judge:</strong> We categorize and define all detectable potential biases in the LLM-as-a-Judge framework into 12 distinct types of bias that undermine reliability and trustworthiness.</li>
-                        <li><strong>Comprehensive Bias Evaluation Framework:</strong> We propose a comprehensive and reliable framework <strong>CALM</strong> for profiling biases in LLM-as-a-Judge with automated prompt construction and comparison to improve the integrity of the process without reliance on human resources.</li>
-                        <li><strong>Findings and Implications:</strong> We performed experiments on six mainstream LLMs using the <strong>CALM</strong> framework and presented a detailed analysis of each model's impact on various biases. The study's results indicate that while some models show significant fairness in judgment, there is still considerable room for improvement in achieving more robust judgment.</li>
+                        <li><strong>An automated LVLM evaluation framework. </strong> This proposed AutoBench-V is the first automated framework for benchmarking LVLMs' capability. The framework leverages text-to-image models to generate images for evaluation and employs GPT-4o as an examiner to conduct VQA evaluations. This automation significantly reduces human involvement, enhancing the efficiency and objectivity of the evaluation process.</li>
+                        <li><strong>Extensive experiments validating the framework's effectiveness.</strong>  We conducted comprehensive experiments, including main evaluations on multiple models, examiner superiority tests, option position bias analysis, and human assessments. The results confirm the framework’s robustness and effectiveness in evaluating LVLMs.</li>
+                        <li><strong>In-depth analysis of LVLMs' performance across diverse visual tasks.</strong> Through systematic evaluation with varied user inputs, we find that LVLMs demonstrate strong proficiency in abstract conceptual understanding while exhibiting comparatively lower performance in concrete visual reasoning tasks. These insights offer a perspective on the current state of LVLM technology, highlighting areas with potential for future development and exploration.</li>
                     </ul>
                 </div>
             </div>
