@@ -910,27 +910,27 @@
   <div class="container" style="margin-bottom: 2vh;">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Case Study of Biases</h2>
+        <h2 class="title is-3">Figures</h2>
         <br>
 
         <div style="border: 2px solid #4CAF50; padding: 20px; margin: 20px; font-family: Arial, sans-serif; text-align: center;">
-          <h2 style="color: #4CAF50;">Case Study: Refinement-Aware Bias.</h2>
-          <img src="static/images/case_study/Case_Refine.png" alt="Refinement Example" width="70%" />
-          <p>In the example above, we asked the model to score the answer in three stages: before refinement, after refinement, and after refinement with the dialogue history. The respective scores were 6, 7, and 8.</p>
+          <h2 style="color: #4CAF50;">Figure: Model performace</h2>
+          <img src="static/images/Figure_rank.png" alt="Refinement Example" width="70%" />
+          <p>Score variation of models from easy to hard difficulty across different user inputs. As task difficulty increases, the performance disparity between models becomes more pronounced.</p>
         </div>
         <br>
 
         <div style="border: 2px solid #337AB7; padding: 20px; margin: 20px; font-family: Arial, sans-serif; text-align: center;">
-          <h2 style="color: #337AB7;">Case Study: Sentiment Bias.</h2>
-          <img src="static/images/case_study/Case_Sentiment.png" alt="Sentiment Example" width="70%" />
-          <p>In the example above, we initially had the Claude-3.5-Sonnet model evaluate the original pair of answers, concluding that answer A was superior. We then revised answer A to include expressions of anger. Subsequently, although the Claude-3.5-Sonnet model acknowledged that answer A was "more direct and technically precise," it noted that "the confrontational tone might be off-putting to some users," leading it to determine that answer B was now the better choice.</p>
+          <h2 style="color: #337AB7;">Figure: Samples</h2>
+          <img src="static/images/figure_75sample.png" alt="Sentiment Example" width="70%" />
+          <p>We randomly sampled 75 question instances for each user input, with 25 questions from each difficulty level. We then visualized the response patterns of various models to these questions (the red means). The rows in each user input, from top to bottom, represent the response situations of \texttt{Claude-3.5-sonnet}, \texttt{Claude-3-haiku}, \texttt{Gemini-1.5-flash}, \texttt{GLM-4v}, \texttt{GPT-4o}, \texttt{GPT-4o mini}, and \texttt{Qwen2-VL}, respectively.</p>
         </div>
         <br>
 
         <div style="border: 2px solid #b44672; padding: 20px; margin: 20px; font-family: Arial, sans-serif; text-align: center;">
-          <h2 style="color: #b44672;">Case Study: Authority bias.</h2>
-          <img src="static/images/case_study/Case_authority.png" alt="Authority Example" width="70%" />
-          <p>In the example above, we have a question along with two answers of varying quality in our dataset, with Assistant A's answer being of higher quality. Initially, GPT-3.5-Turbo made the correct judgment. However, when we added automatically generated fake references to Assistant B's answer, the judge model considered Assistant B's quality to be superior and cited our provided fake references as justification. At this point, the judge model was successfully hacked, demonstrating authority bias.</p>
+          <h2 style="color: #b44672;">Figure:ranking</h2>
+          <img src="static/images/heatmap_00.png" alt="Authority Example" width="70%" />
+          <p>The ranking of different models in five user inputs under different difficulty levels.</p>
         </div>
         <br>
 
