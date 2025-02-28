@@ -217,6 +217,12 @@
                   <a href="https://iriscxy.github.io/">Xiuying Chen</a><sup style="color:#ed4b82;">2</sup>,
               </span>
               <span class="author-block">
+                <a href="https://viterbi-web.usc.edu/~yzhao010/">Yue Zhao</a><sup style="color:#ca430d;">2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://tianyizhou.github.io/">Tianyi Zhou</a><sup style="color:#9a07b4;">2</sup>,
+              </span>
+              <span class="author-block">
                 <a href="https://www.mohamed-elhoseiny.com/">Mohamed Elhoseiny</a><sup style="color:#1d9a29;">3</sup>,
               </span>
               <span class="author-block">
@@ -226,6 +232,8 @@
           <div class="is-size-5 publication-authors">
               <span class="author-block"><sup style="color:#6fbf73;">1</sup>University of Notre Dame,</span>
               <span class="author-block"><sup style="color:#ed4b82;">2</sup>MBZUAI,</span>
+              <span class="author-block"><sup style="color:#ca430d;">3</sup>=USC,</span>
+              <span class="author-block"><sup style="color:#9a07b4;">3</sup>=UM, College Park,</span>
               <span class="author-block"><sup style="color:#1d9a29;">3</sup>KAUST</span>
           </div>
           
@@ -341,7 +349,7 @@
             <h2 class="title is-3">Abstract</h2>
             <div class="content has-text-justified">
               <p>
-                Large Vision-Language Models (LVLMs) have become essential for advancing the integration of visual and linguistic information, facilitating a wide range of complex applications and tasks. However, the evaluation of LVLMs presents significant challenges as the evaluation benchmark always demands lots of human cost for its construction, and  remains static, lacking flexibility once constructed. Even though automatic evaluation has been explored in textual modality, the visual modality remains under-explored. As a result, in this work, we address a question: "Can LVLMs serve as a path to automatic benchmarking?". We introduce <strong>AutoBench-V</strong>, an automated framework for serving evaluation on demand, i.e., benchmarking LVLMs based on specific aspects of model capability. Upon receiving an evaluation capability, <strong>AutoBench-V</strong> leverages text-to-image models to generate relevant image samples and then utilizes LVLMs to orchestrate visual question-answering (VQA) tasks, completing the evaluation process efficiently and flexibly. Through an extensive evaluation of seven popular LVLMs across five demanded user inputs (i.e., evaluation capabilities), the framework shows effectiveness and reliability. We observe the following: (1) Our constructed benchmark accurately reflects varying task difficulties; (2) As task difficulty rises, the performance gap between models widens; (3) While models exhibit strong performance in abstract level understanding, they underperform in details reasoning tasks; and (4) Constructing a dataset with varying levels of difficulties is critical for a comprehensive and exhaustive evaluation. Overall, <strong>AutoBench-V</strong> not only successfully utilizes LVLMs for automated benchmarking but also reveals that LVLMs as judges have significant potential in various domains.
+                Large Vision-Language Models (LVLMs) have become essential for advancing the integration of visual and linguistic information, facilitating a wide range of complex applications and tasks. However, the evaluation of LVLMs presents significant challenges as the evaluation benchmark always demands lots of human cost for its construction, and  remains static, lacking flexibility once constructed. Even though automatic evaluation has been explored in textual modality, the visual modality remains under-explored. As a result, in this work, we address a question: "Can LVLMs serve as a path to automatic benchmarking?". We introduce <strong>AutoBench-V</strong>, an automated framework for serving evaluation on demand, i.e., benchmarking LVLMs based on specific aspects of model capability. Upon receiving an evaluation capability, <strong>AutoBench-V</strong> leverages text-to-image models to generate relevant image samples and then utilizes LVLMs to orchestrate visual question-answering (VQA) tasks, completing the evaluation process efficiently and flexibly. Through an extensive evaluation of seven popular LVLMs across five demanded user inputs (i.e., evaluation capabilities), the framework shows effectiveness and reliability.
               </p>
             </div>
             <h2 class="title is-3">Introduction</h2>
